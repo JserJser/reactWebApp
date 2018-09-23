@@ -10,6 +10,15 @@ export function getData() {
     }).then(text => {
         console.log(text)
     })
+
+    // '/api/2' 获取json
+    var result1 = get('/api/2')
+
+    result1.then(res => {
+        return res.json()
+    }).then(json => {
+        console.log(json)
+    })
 }
 
 export function postData() {

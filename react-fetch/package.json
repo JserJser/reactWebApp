@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "set NODE_ENV=dev && webpack-dev-server --progress --colors",
+    "mock": "node --harmony ./mock/server.js",
     "build": "rd/s/q build && set NODE_ENV=production && webpack --config ./webpack.production.config.js --progress --colors"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+   "devDependencies": {
     "autoprefixer": "^6.4.0",
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
@@ -23,6 +24,9 @@
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.22.0",
     "json-loader": "^0.5.4",
+    "koa": "^1.2.2",
+    "koa-body": "^1.6.0",
+    "koa-router": "^5.4.0",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "open-browser-webpack-plugin": "0.0.2",

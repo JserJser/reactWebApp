@@ -16,6 +16,19 @@ export function getData() {
         console.log(text)
     })
 
+    // '/api/2' 获取json
+    var result1 = fetch('/api/2', {
+        credentials: 'include',
+        headers: {
+            'Accept': 'application/json, text/plain, */*'
+        }
+    });
+
+    result1.then(res => {
+        return res.json()
+    }).then(json => {
+        console.log(json)
+    })
 }
 
 export function postData() {

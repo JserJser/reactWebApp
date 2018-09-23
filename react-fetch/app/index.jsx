@@ -12,7 +12,7 @@ const store = configureStore()
 import RouteMap from './router/routeMap'
 
 // import { getData, postData } from './fetch/test.js'
-import { getData, postData } from './fetch/data.js'
+ import { getData, postData } from './fetch/data.js'
 getData();
 postData();
 
