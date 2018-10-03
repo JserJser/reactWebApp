@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+ <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    <style>
+</style>
+</head>
+<body>
+<div id="app">
+  <div 
+     v-bind:style="objStyle">
+     通过对象方式定义样式
+  </div>
+</div>
+
+<script>
+new Vue({
+  el: '#app',
+  data: {
+   objStyle:{
+       color: 'red',
+	    fontSize:'30px'
+   }
+  }
+})
+</script>
+</body>
+</html>

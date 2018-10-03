@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+ <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+ <script src="https://cdn.bootcss.com/vue-router/2.7.0/vue-router.min.js"></script>
+</head>
+<body>
+<div id="app">
+</div>
+
+<script>
+    var mixin={
+        created:function(){
+            document.write('混入调用'+'<br>')
+        }
+    }
+    new Vue({
+       
+        created:function(){
+            document.write('组件调用'+'<br>')
+        },
+         mixins:[mixin]
+    })
+
+</script>
+</body>
+</html>

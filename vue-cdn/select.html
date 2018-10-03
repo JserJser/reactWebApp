@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+ <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    <style>
+</style>
+</head>
+<body>
+<div id="app">
+    <select name="" id="" v-model="selected" name="fruit">
+        <option value="">选择你喜欢的食物</option>
+        <option value="橘子">橘子</option>
+        <option value="香蕉">香蕉</option>
+    </select>
+    <div id="output">
+        选中的水果是:{{selected}}
+    </div>
+</div>
+
+<script>
+new Vue({
+  el: '#app',
+  data: {
+   selected:''
+  }
+})
+
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+    <p>原始字符串：{{message}}</p>
+    <p>计算后反转字符串：{{reverseMessage}}</p>
+    <p>使用方法后反转字符串：{{reverseMessage2()}}</p>
+    </div>
+    <script>
+        let data={
+              message:'meat1'
+        }
+        var vm=new Vue({
+            el:'#app',
+            data:data,
+            computed:{
+                reverseMessage:function(){
+                    console.log("reverseMessage"+Date.now());
+                    return this.message.split('').reverse().join('')+Date.now();
+                }
+            },
+            methods:{
+                reverseMessage2:function(){
+                        console.log("reverseMessage2"+Date.now());
+                    return this.message.split('').reverse().join('')+Date.now();
+                }
+            }
+        })
+    </script>
+</body>
+</html>

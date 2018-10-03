@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+   <div id="app">
+	{{5+5}}<br>
+	{{ ok ? 'YES' : 'NO' }}<br>
+	{{ message.split('').reverse().join('') }}
+	<div v-bind:id="'list-' + id">我的id是{{id}}</div>
+</div>
+   <script>
+     new Vue({
+  el: '#app',
+  data: {
+	ok: true,
+    message: '表达式',
+	id : 2
+  }
+})
+    </script>
+</body>
+</html>

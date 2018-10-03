@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+ <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    <style>
+</style>
+</head>
+<body>
+<div id="app">
+<input type="radio" id="checkbox" value="checkbox" v-model="picked">
+<label for="checkbox">checkbox</label>
+<br>
+<input type="radio" id="forCheckbox" value="forCheckbox" v-model="picked">
+<label for="forCheckbox">forCheckbox</label>
+<br>
+<input type="radio" id="oneCheckbox" value="oneCheckbox" v-model="picked">
+<label for="oneCheckbox">oneCheckbox</label>
+<br>
+<span>选中值为{{picked}}</span>
+</div>
+
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    picked:'forCheckbox'
+  }
+})
+
+</script>
+</body>
+</html>

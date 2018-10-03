@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p style="font-size:25px">计数器{{counter}}</p>
+        <button @click="counter++" style="font-size:25px">点我</button>
+    </div>
+    <script>
+       var vm=new Vue({
+           el:'#app',
+           data:{
+               counter:1
+           }
+       })
+       vm.$watch('counter',function(prev,now){
+        alert('计数器值得变化:'+prev+'变为'+now);
+       })
+    </script>
+</body>
+</html>

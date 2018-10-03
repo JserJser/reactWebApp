@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+ <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    <style>
+</style>
+</head>
+<body>
+<div id="app">
+    <p>{{total}}</p>
+    <button-counter v-on:increment:incrementTotal></button-counter>
+</div>
+
+<script>
+    Vue.component('button-counter',{
+        template:'<button v-on:click="incrementHandler">{{counter}}</button>',
+        data:function(){
+            return{
+                counter:0
+            }
+        },
+        methods:{
+            incrementHandler:function(){
+                this.counter+=1
+                this.$emit('increment')
+            }
+        }
+    })
+    //注册
+new Vue({
+  el: '#app',
+  data:{
+      total:0
+  },
+  methods:{
+     incrementTotal:function(){
+         this.total+=1;
+     } 
+  }
+})
+
+</script>
+</body>
+</html>

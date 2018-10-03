@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+ <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+ <script src="https://cdn.bootcss.com/vue-router/2.7.0/vue-router.min.js"></script>
+    <style>
+</style>
+</head>
+<body>
+<div id="app">
+  <h1>hello App</h1>
+  <p>
+      <router-link to="/foo">Go to Foo</router-link>
+      <router-link to="/bar">Go to Bar</router-link>
+  </p>
+    <!-- 路由匹配到的组件 -->
+    <router-view></router-view>
+</div>
+
+<script>
+  //定义路由组件
+  //import
+  const Foo={template:'<div>foo</div>'}
+  const Bar={template:'<div>bar</div>'}
+  //定义路由
+  const routes=[
+      {path:'/foo',component:Foo},
+      {path:'/bar',component:Bar}     
+  ]
+  //创建路由实例
+  const router=new VueRouter({
+      routes:routes
+  })
+    //注册
+const app=new Vue({
+ router
+}).$mount('#app')
+
+</script>
+</body>
+</html>

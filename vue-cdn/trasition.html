@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+ <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+ <script src="https://cdn.bootcss.com/vue-router/2.7.0/vue-router.min.js"></script>
+<style>
+.slide-fade-enter-active{
+    transition:all 8s ease;
+}
+.slide-fade-leave-active{
+    transition: all 5s cubic-bezier(1,0.7,0.4,5);
+}
+ .slide-fade-enter,.slide-fade-leave-to{
+    transform:translateX(10px);
+    opacity: 0;
+} 
+</style>
+</head>
+<body>
+<div id="app">
+  <button v-on:click="show=!show">点击控制logo的消失</button>
+  <transition name="slide-fade">
+      <p v-if="show">logo</p>
+  </transition>
+</div>
+
+<script>
+new Vue({
+    el:'#app',
+    data:{
+        show:true
+    }
+})
+
+</script>
+</body>
+</html>
