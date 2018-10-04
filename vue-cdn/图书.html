@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+*{
+    margin: 0;padding: 0;
+}
+table{
+    width: 1090px;
+    margin: 20px auto;
+    /* border:1px solid blue; */
+
+}
+tr{
+    line-height: 30px;
+    /* border:1px solid blue; */
+}
+td,th{
+    text-align: center;
+    border:1px solid blue;
+}
+tr:nth-child(2n+1){
+    background: lightblue;
+}
+button{
+    width: 40px;
+    height: 24px;
+    border: 1px solid blue;
+    background: lightblue;
+    
+}
+fieldset{
+    width: 1040px;
+    margin: 0 auto;
+    padding: 25px;
+}
+fieldset p{
+    line-height: 30px;
+}
+
+</style>
+<script src="./vue.js"></script>
+
+</head>
+<body>
+<div id="app">
+    <table cellspacing="0">
+        <tr>
+            <th>ID</th>
+            <th>书名</th>
+            <th>作者</th>
+            <th>价格</th>
+            <th>操作</th>
+        </tr>
+        <tr v-for="(book,index) in books">
+            <td>{{book.id}}</td>
+            <td>{{book.name}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.price}}</td>
+            <td><button @click="delBook(index)">删除</button></td>
+        </tr>
+    </table>
+    <fieldset>
+        <legend>添加新书</legend>
+        <p>书名:<input type="text" v-model="newBook.name"></p>
+        <p>作者:<input type="text" v-model="newBook.author"></p>
+        <p>价格:<input type="text" v-model="newBook.price"></p>        
+        <p><button @click="addBook">添加</button></p>
+        
+    </fieldset>
+</div>
+
+<script>
+var app=new Vue({
+    el:'#app',
+    data:{
+        books:[
+            {id:1,name:'傲慢与偏见',author:'简·奥斯汀',price:'$28'},
+            {id:2,name:'呼啸山庄',author:'艾米莉·勃朗特',price:'$18'},
+            {id:3,name:'了不起的盖茨比',author:'·菲茨杰拉德',price:'$38'}  
+        ],
+        newBook:{
+            id:0,
+            name:'',
+            author:'',
+            price:''
+        }
+    },
+    methods:{
+        delBook:function(idx){
+				this.books.splice(idx, 1);
+			},
+        addBook:function(){
+            var maxId = 0;
+            for(var i=0; i<this.books.length; i++){
+                if(maxId<this.books[i].id){
+                    maxId = this.books[i].id;
+                }
+            }
+            this.newBook.id = maxId+1;
+            // console.log(this.newBook);
+            // 
+            // 插入到books中
+            this.books.push(this.newBook);
+
+            //清空新书
+            this.newBook = {};
+        }
+    }
+})
+
+</script>
+</body>
+</html>
